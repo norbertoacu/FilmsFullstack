@@ -1,0 +1,41 @@
+<ion-header>
+  <app-headmenu titulo="List"></app-headmenu>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menu-content"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-list>
+    <ion-item *ngFor="let film of peliculas">
+      <ion-avatar slot="start">
+        <img *ngIf="film.filename" src="http://localhost:8080/images/{{film.filename}}" alt="image" />
+      </ion-avatar>
+
+      <ion-label>
+        <h2>{{film.titulo}}</h2>
+        <h3>{{film.duracion}}</h3>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/update/', film.id]">
+          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteFilm(film.id)">
+          <ion-icon name="trash" style="zoom:1.5"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <!-- <ion-fab-button clear [routerLink]="'/datos'" [routerDirection]="'root'"> esto tambien funciona-->
+     <ion-fab-button (click)="addFilm()">
+      <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

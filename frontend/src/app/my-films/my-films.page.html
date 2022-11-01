@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>my-films</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let b of peliculas">
+      <ion-label>
+        <h1>{{b.titulo}}</h1>
+        <p>{{b.duracion}}</p>
+      </ion-label>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>
