@@ -1,4 +1,4 @@
-# Movies
+# FilmsFullStack
 
 _FullStack project with training purposes for the use and practice of FrameWorks Ionic, Express, Angular. It is a simple project where we can create a list of our favorite movies, it allows us to consult, add, modify._
 
@@ -47,7 +47,8 @@ _I also recommend that you use an IDE of the Visual Studio Code type, which will
 ## Running the tests ⚙️
 
 _Attached the link to be able to use the tests I did with PostMan_
-https://blue-moon-176129.postman.co/workspace/Pruebas~0f6c06d5-3b00-4354-a211-d18ada6765ea/collection/23357599-407bef1a-71ea-4f4b-802f-d9acc44177af?action=share&creator=23357599
+
+https://documenter.getpostman.com/view/23357599/2s8YYFqNhn
 
 ### Analyze end-to-end tests 🔩
 
@@ -83,10 +84,10 @@ You can find much more about how to use this project in our [Wiki](https://githu
 
 ## Versioned 📌
 
-0.1a - First version
-0.1b - Soon, I hope to be able to correct errors that it gives on the console, and to be able to refresh the list screen when making an update/modification
+* 0.1a - First version
+* 0.1b - Soon, I hope to be able to correct errors that it gives on the console, and to be able to refresh the list screen when making an update/modification
 of any of the FILMS.
-0.1c - fixed problems of the previous version. Add Images support.
+* 0.1c - fixed problems of the previous version(list refresh,console errors). Add Images support.
 
 
 ## Authors ✒️
