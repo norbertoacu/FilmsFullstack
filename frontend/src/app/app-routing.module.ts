@@ -21,10 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/datos/datos.module').then( m => m.DatosPageModule)
   },
   {
-    path: 'my-films',
-    loadChildren: () => import('./my-films/my-films.module').then( m => m.MyFilmsPageModule)
-  },
-  {
+  //   path: 'my-films',
+  //   loadChildren: () => import('./my-films/my-films.module').then( m => m.MyFilmsPageModule)
+  // },
+  //{
     path: 'update/:id',
     loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
   },

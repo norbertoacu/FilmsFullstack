@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router, ActivatedRoute } from "@angular/router";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { FilmService } from './../services/film.service';
-
-
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-update',
@@ -16,9 +14,13 @@ export class UpdatePage implements OnInit {
 
   updateFilmFg: FormGroup;
   id: any;
+  isSubmitted: boolean = false;
+  capturedPhoto: string = "";
+  peliculas: any = [];
 
   constructor(
     private filmService: FilmService,
+    private photoService: PhotoService,
     private activatedRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
     private router: Router
@@ -29,9 +31,11 @@ export class UpdatePage implements OnInit {
   ngOnInit() {
     this.fetchUser(this.id);
     this.updateFilmFg = this.formBuilder.group({
-      titulo: [''],
-      duracion: ['']
-     // username: ['']
+      titulo: ['',[Validators.required]],
+      duracion: ['',[Validators.required]],
+     // filename: ['',[Validators.required]]
+
+                
     })
   }
 
@@ -39,11 +43,37 @@ export class UpdatePage implements OnInit {
     this.filmService.getFilm(id).subscribe((data) => {
       this.updateFilmFg.setValue({
         titulo: data['titulo'],
-        duracion: data['duracion']
+        duracion: data['duracion'],
+      //  filename: data['filename'] //no estoy seguro de esta linea
        
       });
     });
+    console.log("Registro a editar:" + this.filmService.getFilm(id))
+    
   }
+  takePhoto() {
+   
+    this.photoService.takePhoto().then(data => {
+     this.capturedPhoto = data.webPath;
+    });
+  }
+
+  pickImage() {
+  
+    this.photoService.pickImage().then(data => {
+     this.capturedPhoto = data.webPath;
+    });
+  }
+
+  discardImage() {
+   
+     this.capturedPhoto = null;
+  }
+  get errorControl() {
+    return this.updateFilmFg.controls;
+  }
+
+
 
   onSubmit() {
     if (!this.updateFilmFg.valid) {
@@ -56,5 +86,23 @@ export class UpdatePage implements OnInit {
         })
     }
   }
+  async submitForm() {
+   
+    this.isSubmitted = true;
+    if (!this.updateFilmFg.valid) {
+      console.log('Please provide all the required values!')
+      return false;
+    } else {
+      let blob = null;
+      if (this.capturedPhoto != "") {
+        const response = await fetch(this.capturedPhoto);
+        blob = await response.blob();
+      }
 
+      this.filmService.createFilm(this.updateFilmFg.value, blob).subscribe(data => {
+        console.log("Photo sent!");
+        this.router.navigateByUrl("/listado");
+      })
+    }
+  }
 }

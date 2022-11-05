@@ -1,113 +1,115 @@
-# Films
+# Movies
 
-_Proyecto BackEnd/FrontEnd con fines formativos para el uso y practica de FrameWorks Ionic,Express,Angular.Es un sencillo proyecto donde poder crear una lista de nuestras películas favoritas,permite consultar, añadir, modificar._
+_FullStack project with training purposes for the use and practice of FrameWorks Ionic, Express, Angular. It is a simple project where we can create a list of our favorite movies, it allows us to consult, add, modify._
 
-## Comenzando 🚀
+## Starting 🚀
 
-_Podras optener una copia del proyecto en : https://github.com/norbertoacu/Films.git_
+_You can get a copy of the project at: https://github.com/norbertoacu/FilmsFullstack.git
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas_
+_These instructions will allow you to get a working copy of the project on your local machine for development and testing purposes_
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+See **Deployment** to learn how to deploy the project.
 
 
-### Pre-requisitos 📋
+### Pre-requisites 📋
 
-_Necesitaras tener instalado un gestor de bases de datos,tipo , XAMP,WAMP,MySQLWorkBench, que trabaje con MySQL._
-_Recuerda que tienes que tener bien configurado el fichero db.config.js,con el nombre de la base de datos y el usuario y la contraseña_
-_Tambien te recomiendo que utilices un IDE del tipo Visual Studio Code, que te facilitara muchas de las tareas_
-
-```
+_You will need to have installed a database manager, such as XAMP, WAMP, MySQLWorkBench, that works with MySQL._
+_Remember that you have to have the db.config.js file well configured, with the name of the database and the user and password_
+_I also recommend that you use an IDE of the Visual Studio Code type, which will make many of the tasks easier for you_
 
 ```
 
-### Instalación 🔧
+```
 
-## Comienza con la instalación de la Aplicación
-* Asegurate de terner instalado el Xamp,Wamp, MySqlWorkBench.
-* Crea una base de datos que se llame 'db_peliculas' o bien importala de la carpeta BBDD.
-* Asegurate que en el fichero db_config.js, estan puestos el usuario y la clave correctos, para conectar con tu gestor de BBDD.
-* Crear una carpeta para alojar el proyecto.
-* Abre esa carpeta en el area de trabajo del Visual Studio Code.
-* Asegurate de tener Git instalado. 
-* Abre un terminal GitBash. 
-* Git clone https://github.com/norbertoacu/Films.git 
+### Installation 🔧
+
+## Start with the installation of the Application
+* Make sure you have Xamp, Wamp, MySqlWorkBench installed.
+* Create a database called 'db_peliculas' or import it from the BBDD folder.
+* Make sure that in the db_config.js file, the correct user and password are set, to connect with your DB manager.
+* Create a folder to host the project.
+* Open that folder in the Visual Studio Code workspace.
+* Make sure you have Git installed.
+* Open a GitBash terminal.
+* Git clone https://github.com/norbertoacu/FilmsFullstack.git
 * `cd Films`
 * `cd frontend`
-* Ejecuta `npm install` para instalar el gestor de paquetes npm.
-* Ejecuta `ionic serve ` para iniciar el servidor del FrontEnd.
+* Run `npm install` to install the npm package manager.
+* Run `ionic serve ` to start the FrontEnd server.
 
-## Inicia el Servidor Node/Express.
-* Ejecuta/inicia tu gestor de bases de datos, XAMP,WAMP,MyWorkBench.
+## Start the Node/Express Server.
+* Run/start your database manager, XAMP,WAMP,MyWorkBench.
 * `cd backend`
-* Ejecuta `npm install` para instalar el gestor de paquetes npm.
-* Ejecuta `index node.js` para iniciar el servidor del Backend.
+* Run `npm install` to install the npm package manager.
+* Run `index node.js` to start the Backend server.
 
 
-## Ejecutando las pruebas ⚙️
+## Running the tests ⚙️
 
-_Adjunto el link para poder utilizar las pruebas que hice con el PostMan_
+_Attached the link to be able to use the tests I did with PostMan_
 https://blue-moon-176129.postman.co/workspace/Pruebas~0f6c06d5-3b00-4354-a211-d18ada6765ea/collection/23357599-407bef1a-71ea-4f4b-802f-d9acc44177af?action=share&creator=23357599
 
-### Analice las pruebas end-to-end 🔩
+### Analyze end-to-end tests 🔩
 
-_Pendiente de realización_
-
-```
-
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Pendiente de realización_
+_Pending completion_
 
 ```
 
 ```
 
-## Despliegue 📦
+### And coding style tests ⌨️
 
-_notas adicionales sobre como hacer deploy_
+_Pending completion_
 
-## Construido con 🛠️
+```
 
-* [VisualStudioCode](https://code.visualstudio.com/)- El IDE utilizado
+```
 
-## Contribuyendo 🖇️
+## Deployment 📦
 
-_pendiente de creación_
+_additional notes on how to deploy_
+
+## Built with 🛠️
+
+* [VisualStudioCode](https://code.visualstudio.com/)- The IDE used
+
+## Contributing 🖇️
+
+_pending creation_
 
 ## Wiki 📖
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+You can find much more about how to use this project in our [Wiki](https://github.com/your/project/wiki)
 
-## Versionado 📌
+## Versioned 📌
 
-0.1a - Primera versión
-0.1b - Proximamente, espero poder corregir errores que da por consola, y poder hacer un refresco de la pantalla de listado cuando hacer una actualización/modificación 
-de alguno de los FILMs.
-
-## Autores ✒️
-
-_Gracias a mi profesor Tiburcio Cruz_
-_Gracias a mis compañeros de clase, Rafael,Eduardo,Manuel_
-
-* **Norberto Acuña** - *Trabajo Inicial* - [norbertoacu](https://github.com/norbertoacu/Films.git)
+0.1a - First version
+0.1b - Soon, I hope to be able to correct errors that it gives on the console, and to be able to refresh the list screen when making an update/modification
+of any of the FILMS.
+0.1c - fixed problems of the previous version. Add Images support.
 
 
-## Licencia 📄
+## Authors ✒️
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+_Thanks to my teacher Tiburcio Cruz_
+_Thanks to my classmates, Rafael, Manuel_
 
-## Expresiones de Gratitud 🎁
+* **Norberto Acuña** - *Initial Work* - [norbertoacu](https://github.com/norbertoacu/FilmsFullstack.git)
 
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: 
+
+## License 📄
+
+This project is licensed under the (Your License) License - see the file [LICENSE.md](LICENSE.md) for details
+
+## Expressions of Gratitude 🎁
+
+* Tell others about this project 📢
+* Invite someone from the team a beer 🍺 or a coffee ☕.
+* Give thanks publicly 🤓.
+* Donate with crypto to this address:
 * etc.
 
 
 
 ---
-⌨️ con ❤️ por [norbertoacu](https://github.com/norbertoacu) 😊
+⌨️ with ❤️ by [norbertoacu](https://github.com/norbertoacu) 😊

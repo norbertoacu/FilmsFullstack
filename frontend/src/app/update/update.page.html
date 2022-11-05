@@ -1,30 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Editing Films</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="menu-content"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editing Film</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list lines="full">
-    <form [formGroup]="updateFilmFg" (ngSubmit)="onSubmit()">
-
-      <ion-item>
-        <ion-label position="floating">Title</ion-label>
-        <ion-input formControlName="titulo" type="text" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Duration</ion-label>
-        <ion-input formControlName="duracion" type="text" required>
-        </ion-input>
-      </ion-item>
-
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="success" expand="block">Update</ion-button>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img>
+                        
+       <!-- <img *ngIf="peliculas.filename" src="http://localhost:8080/images/{{peliculas.filename}}" alt="image" /> -->
+       <!-- <img src="http://localhost:8080/images/{{filename}}"/> -->
+        
         </ion-col>
-      </ion-row>
+      <ion-col size="6">
+        <ion-button color="primary" fill="outline" (click)="takePhoto()">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Take a photo
+        </ion-button>
+        <ion-button color="primary" fill="outline" (click)="pickImage()">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Pick an image
+        </ion-button>
+        <ion-button color="danger" fill="outline" (click)="discardImage()">
+          <ion-icon slot="start" name="aperture"></ion-icon>
+          Discard image
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    </form>
-  </ion-list>
+  <form [formGroup]="updateFilmFg" (ngSubmit)="submitForm()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Title</ion-label>
+      <ion-input formControlName="titulo" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.titulo.errors?.required">Title is required.</span>
+    <ion-item lines="full">
+      <ion-label position="floating">Duration</ion-label>
+      <ion-input formControlName="duracion" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.duracion.errors?.required">Duration is required.</span>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

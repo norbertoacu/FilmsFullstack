@@ -1,8 +1,4 @@
-echo "# FilmsFullstack"
-git init
-git add .
-git config --global user.email norbertoacu@gmail.com
-git config --global user.name norbertoacu
+echo "Primer Commit proyecto Full Stack Films"
 git commit -m "first commit"
 git branch -M master
 git remote add origin https://github.com/norbertoacu/FilmsFullstack.git

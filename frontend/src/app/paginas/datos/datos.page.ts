@@ -10,6 +10,7 @@ import { PhotoService } from '../../services/photo.service';
   templateUrl: './datos.page.html',
   styleUrls: ['./datos.page.scss'],
 })
+
 export class DatosPage implements OnInit {
   
   filmForm: FormGroup;
@@ -42,19 +43,7 @@ get errorControl() {
   return this.filmForm.controls;
 }
 
-  // onSubmit() {
-  //   if (!this.filmForm.valid) {
-  //     return false;
-  //   } else {
-  //     this.filmService.createFilm(this.filmForm.value)
-  //       .subscribe((response) => {
-  //         this.zone.run(() => {
-  //           this.filmForm.reset();
-  //           this.router.navigate(['/listado']);
-  //         })
-  //       });
-  //   }
-  // }
+  
   takePhoto() {
    
     this.photoService.takePhoto().then(data => {
