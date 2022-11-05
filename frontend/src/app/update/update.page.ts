@@ -82,27 +82,27 @@ export class UpdatePage implements OnInit {
       this.filmService.updateFilm(this.id, this.updateFilmFg.value)
         .subscribe(() => {
           this.updateFilmFg.reset();
-          this.router.navigate(['/list']);
+          this.router.navigate(['/listado']);
         })
     }
   }
-  async submitForm() {
+  // async submitForm() {
    
-    this.isSubmitted = true;
-    if (!this.updateFilmFg.valid) {
-      console.log('Please provide all the required values!')
-      return false;
-    } else {
-      let blob = null;
-      if (this.capturedPhoto != "") {
-        const response = await fetch(this.capturedPhoto);
-        blob = await response.blob();
-      }
+  //   this.isSubmitted = true;
+  //   if (!this.updateFilmFg.valid) {
+  //     console.log('Please provide all the required values!')
+  //     return false;
+  //   } else {
+  //     let blob = null;
+  //     if (this.capturedPhoto != "") {
+  //       const response = await fetch(this.capturedPhoto);
+  //       blob = await response.blob();
+  //     }
 
-      this.filmService.createFilm(this.updateFilmFg.value, blob).subscribe(data => {
-        console.log("Photo sent!");
-        this.router.navigateByUrl("/listado");
-      })
-    }
-  }
+  //     this.filmService.createFilm(this.updateFilmFg.value, blob).subscribe(data => {
+  //       console.log("Photo sent!");
+  //       this.router.navigateByUrl("/listado");
+  //     })
+  //   }
+  // }
 }

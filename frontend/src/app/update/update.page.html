@@ -36,7 +36,7 @@
     </ion-row>
   </ion-grid>
 
-  <form [formGroup]="updateFilmFg" (ngSubmit)="submitForm()" novalidate>
+  <form [formGroup]="updateFilmFg" (ngSubmit)="onSubmit()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating">Title</ion-label>
       <ion-input formControlName="titulo" type="text" required></ion-input>
