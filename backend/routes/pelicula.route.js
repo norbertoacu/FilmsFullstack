@@ -18,8 +18,11 @@ module.exports = app => {
     // Retrieve a single Pelicula with id
     router.get("/:id", Peliculas.findOne);
   
-    // Update a Pelicula with id
-    router.put("/:id", Peliculas.update);
+    // Update a Pelicula with id - El que funciona,pero no carga la foto
+   router.put("/:id", Peliculas.update);
+
+    // Prueba de Update con Photo
+    //router.put("/",upload.single('file'), Peliculas.create);
   
     // Delete a Pelicula with id
     router.delete("/:id", Peliculas.delete);

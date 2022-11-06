@@ -12,8 +12,12 @@
     <ion-row class="ion-align-items-center">
       <ion-col size="6">
         <ion-img class="photo-frame" *ngIf="capturedPhoto" [src]="capturedPhoto" (click)="takePhoto()"></ion-img>
-        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
-          (click)="takePhoto()"></ion-img>
+        <!-- <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="../../assets/No-Image-Placeholder.svg"
+          (click)="takePhoto()"></ion-img> -->
+        <ion-img class="photo-frame" *ngIf="!capturedPhoto" src="http://localhost:8080/images/{{pelicula?.filename}}"
+                  (click)="takePhoto()"></ion-img>
+
+          
                         
        <!-- <img *ngIf="peliculas.filename" src="http://localhost:8080/images/{{peliculas.filename}}" alt="image" /> -->
        <!-- <img src="http://localhost:8080/images/{{filename}}"/> -->

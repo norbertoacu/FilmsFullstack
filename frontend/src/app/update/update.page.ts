@@ -16,7 +16,7 @@ export class UpdatePage implements OnInit {
   id: any;
   isSubmitted: boolean = false;
   capturedPhoto: string = "";
-  peliculas: any = [];
+  pelicula: any;
 
   constructor(
     private filmService: FilmService,
@@ -24,20 +24,34 @@ export class UpdatePage implements OnInit {
     private activatedRoute: ActivatedRoute,
     public formBuilder: FormBuilder,
     private router: Router
+   
+
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.getFilm();
   }
 
   ngOnInit() {
-    this.fetchUser(this.id);
+    this.fetchUser(this.id);//traerme cosas :-)
     this.updateFilmFg = this.formBuilder.group({
       titulo: ['',[Validators.required]],
       duracion: ['',[Validators.required]],
+
      // filename: ['',[Validators.required]]
 
                 
     })
+  //  this.getFilm();
   }
+
+  getFilm() {
+    this.filmService.getFilm(this.id).subscribe(response => {
+      this.pelicula = response;
+    });
+  }
+
+
+
 
   fetchUser(id) {
     this.filmService.getFilm(id).subscribe((data) => {
@@ -48,7 +62,7 @@ export class UpdatePage implements OnInit {
        
       });
     });
-    console.log("Registro a editar:" + this.filmService.getFilm(id))
+    //console.log("Registro a editar:" + this.filmService.getFilm(id))
     
   }
   takePhoto() {
@@ -96,13 +110,16 @@ export class UpdatePage implements OnInit {
   //     let blob = null;
   //     if (this.capturedPhoto != "") {
   //       const response = await fetch(this.capturedPhoto);
-  //       blob = await response.blob();
+  //       blob = await response.blob();//transforma en un objeto que puedas enviar por http
   //     }
-
-  //     this.filmService.createFilm(this.updateFilmFg.value, blob).subscribe(data => {
+  //     this.filmService.updateFilm(this.updateFilmFg.value,blob).subscribe(data => {
   //       console.log("Photo sent!");
   //       this.router.navigateByUrl("/listado");
   //     })
   //   }
   // }
+
+
+
+
 }

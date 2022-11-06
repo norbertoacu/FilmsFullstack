@@ -6,7 +6,7 @@ export class Film {
   _id: number;
   titulo: string;
   duracion: string;
-  filename: string;
+  filename?: string;
 }
 
 
@@ -57,6 +57,16 @@ export class FilmService {
   deleteFilm(id) {
     return this.httpCliente.delete(this.endpoint + "/" + id);
   }
+
+  // updateFilm(id, film: Film): Observable<any> {
+  //   console.log("el id seleccionado es:i" + id);
+
+  //   return this.httpCliente.put(this.endpoint + '/' + id, JSON.stringify(film), this.httpOptions)
+    // .pipe(
+    //    tap(_ => console.log(`Film updated: ${id}`)),
+    //    catchError(this.handleError<FilmService[]>('Update film'))
+    // );
+  // }
 
   updateFilm(id, film: Film): Observable<any> {
     console.log("el id seleccionado es:i" + id);
